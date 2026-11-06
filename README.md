@@ -2,7 +2,7 @@
 
 Статичний сайт без збірки. Українська лежить у корені, англійська в `en/`. Приватність: `privacy/` і `en/privacy/`.
 
-Стилі: `assets/site.css`, за `docs/design-system.md`. Перегляд: `py -m http.server 4180 --directory site`.
+Стилі: `assets/site.css`, за `docs/design-system.md`. Якщо змінюєш CSS, збільш `?v=` у посиланні на нього на всіх сторінках, інакше браузери покажуть стару версію. Перегляд: `py -m http.server 4180 --directory site`.
 
 ## Що замінювати
 

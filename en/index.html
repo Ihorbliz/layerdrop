@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Layerdrop - HTML to Layout: a Figma plugin that turns HTML and saved websites into layers</title>
-<meta name="description" content="A free Figma plugin: HTML, saved websites, zip files, folders and emails become editable layers with auto layout and styles.">
+<meta name="description" content="A Figma plugin: HTML, saved websites, zip files, folders and emails become editable layers with auto layout and styles.">
 <link rel="canonical" href="https://ihorbliz.github.io/layerdrop/en/">
 <link rel="alternate" hreflang="uk" href="https://ihorbliz.github.io/layerdrop/">
 <link rel="alternate" hreflang="en" href="https://ihorbliz.github.io/layerdrop/en/">
@@ -20,7 +20,7 @@
 <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/icon-128.png" type="image/png">
 <link rel="preload" href="../assets/fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=4">
 <script src="../assets/community-link.js" defer></script>
 </head>
 <body>
@@ -30,6 +30,7 @@
   <nav aria-label="Sections">
     <a href="#features">Features</a>
     <a href="#compare">Compare</a>
+    <a href="#pricing">Versions</a>
     <a href="#install">Install</a>
     <a href="#faq">Questions</a>
     <a href="privacy/">Privacy</a>
@@ -42,11 +43,11 @@
 
 <main id="main">
 <section class="hero">
-  <p class="mono">Layerdrop - HTML to Layout. A free Figma plugin</p>
-  <h1>Drop a file.<br>Get <span class="ink2">layers</span></h1>
   <div class="hero-grid">
     <div class="hero-copy">
-      <p class="lede">Layerdrop turns HTML, saved websites, archives and emails into editable Figma layers. The result looks like the page in a browser.</p>
+      <p class="mono">Layerdrop - HTML to Layout. A Figma plugin</p>
+      <h1>Drop a file.<br>Get <span class="ink2">layers</span></h1>
+      <p class="lede">Layerdrop turns HTML, saved websites, archives and emails into editable Figma layers. Styles are kept: colors and text become local styles, and the result looks like the page in a browser.</p>
       <div class="actions">
         <a class="btn" href="#features" data-community-pending>See what it does</a>
         <a class="btn" href="#" data-community-link hidden>Open on Figma Community</a>
@@ -67,9 +68,9 @@
   <h2>What lands <span class="ink2">in Figma</span></h2>
   <p class="lede">The plugin opens the page the way a browser shows it and builds layers from that. The page stays whole: nothing gets split into pieces or cropped.</p>
   <ul class="rows">
+    <li><span class="label">Styles are kept</span><div class="text">A color or text setting that appears at least twice becomes a local Figma style. Layers are linked to those styles right away, and importing the same page again reuses them. You can turn this off.</div></li>
     <li><span class="label">Section and frames</span><div class="text">Each file becomes a section holding one frame per selected viewport. A frame is as wide as its viewport and as tall as the page.</div></li>
     <li><span class="label">Auto layout</span><div class="text">Containers are broken down into nested rows and columns, including grids and blocks with uneven gaps. Auto layout stays only where no layer moved by more than 1 px. Overlapping layers stay absolute. You can turn this off.</div></li>
-    <li><span class="label">Color and text</span><div class="text">A color or text setting that appears at least twice becomes a local style. Importing the same page again reuses those styles. You can turn this off too.</div></li>
     <li><span class="label">Layer names</span><div class="text">Layers are named after what they contain: <code>Header</code>, <code>Button · Get started</code>, <code>H2 · Pricing</code>. Utility classes like <code>css-1a2b</code> stay out of the names.</div></li>
     <li><span class="label">Gradients and SVG</span><div class="text">Linear, radial and conic gradients arrive as real Figma gradients, so you can edit their colors and stops. SVG becomes vector, not a picture.</div></li>
     <li><span class="label">Missing fonts</span><div class="text">If a font isn't in Figma but its file is in the HTML or zip, the text arrives as outlines next to a hidden text layer. The plugin lists what to install, and the "Update fonts" button makes the text editable.
@@ -131,7 +132,7 @@
 
 <section id="compare">
   <h2 id="compare-title">Compare</h2>
-  <p class="lede">Free, with no import limit, and it takes files, archives, emails and pasted code. Here is how Layerdrop looks next to other tools.</p>
+  <p class="lede">Files, archives, emails and pasted code in one plugin. Here is how Layerdrop looks next to other tools.</p>
   <p class="note">Based on these tools' public pages as of 6 November 2026. "Not stated" means we didn't find it there.</p>
   <a class="table-skip" href="#how">Skip the table</a>
   <table class="compare" role="table" aria-labelledby="compare-title">
@@ -147,7 +148,7 @@
     <tbody role="rowgroup">
       <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Access</th></tr>
       <tr role="row"><th role="rowheader" scope="row">Price</th>
-        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Free</b></span></td>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Freemium and Pro</b>Two versions.</span></td>
         <td role="cell" data-label="Pagelift"><span><b class="v">Free</b>No import limit.</span></td>
         <td role="cell" data-label="html.to.design"><span><b class="v">Partly</b>10 imports, then 10 a month with a free account. PRO: $12 a month billed yearly, or $18 monthly.</span></td>
         <td role="cell" data-label="Figma ext."><span><b class="v">Figma plans</b>Professional, Education, Organization, Enterprise.</span></td></tr>
@@ -250,6 +251,15 @@
   </div>
 </section>
 
+<section id="pricing">
+  <h2>Two <span class="ink2">versions</span></h2>
+  <div class="plans">
+    <div class="plan"><h3>Freemium</h3></div>
+    <div class="plan"><h3>Pro</h3></div>
+  </div>
+  <p class="plans-note">We'll announce what each version includes later.</p>
+</section>
+
 <section id="install">
   <h2>Install</h2>
   <p class="status gap-b" data-community-pending>Layerdrop isn't on Figma Community yet, so it can't be installed for now. Once the plugin passes review, the link will appear here.</p>
@@ -265,7 +275,7 @@
 <section id="faq">
   <h2>Questions</h2>
   <div class="faq">
-    <details><summary>How much does it cost?</summary><div>Layerdrop is free, and there is no paid version.</div></details>
+    <details><summary>How much does it cost?</summary><div>There will be two versions: Freemium and Pro. We'll announce what each one includes later.</div></details>
     <details><summary>Can I paste a URL?</summary><div>Import by URL is in development. For now, save the page with SingleFile and drop the file: its scripts have already run, and this works for pages behind a login too.</div></details>
     <details><summary>Where do my files go?</summary><div>Nowhere, because the plugin has no server to send them to. The only requests come from the page itself and, for a font that failed to load, from the plugin to Google Fonts. See the <a href="privacy/">privacy policy</a> for details.</div></details>
     <details><summary>Is it safe to run a page's scripts?</summary><div>The page runs in an isolated frame and can't reach the plugin or your Figma file. But its scripts can make their own internet requests, and an infinite loop can freeze the window. Don't import pages you don't trust.</div></details>
@@ -280,7 +290,7 @@
 
 <footer>
   <a class="logo" href="./"><img src="../assets/icon.svg" alt="" width="28" height="28">Layerdrop</a>
-  <nav aria-label="Sections"><a href="#features">Features</a><a href="#compare">Compare</a><a href="#install">Install</a><a href="#faq">Questions</a></nav>
+  <nav aria-label="Sections"><a href="#features">Features</a><a href="#compare">Compare</a><a href="#pricing">Versions</a><a href="#install">Install</a><a href="#faq">Questions</a></nav>
   <p>This page describes version 2.0. <a href="privacy/">Privacy</a></p>
   <p>An independent plugin, not affiliated with Figma, Inc. Figma is a trademark of Figma, Inc.</p>
 </footer>
