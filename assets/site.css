@@ -113,6 +113,9 @@ section, .page { padding: clamp(64px, 9vw, 136px) var(--gutter) 0; }
 }
 .hero-copy .lede { font-size: clamp(20px, 1.7vw, 24px); }
 .hero-shot { margin: 0 calc(-1 * var(--gutter) - 18px) 0 0; }
+/* The plugin window sits on the frame it made and hangs just past its lower edge. */
+.hero-stage { position: relative; padding-bottom: 6%; }
+.hero-window { position: absolute; top: 15%; right: calc(var(--gutter) + 24px); width: 37%; box-shadow: 8px 8px 0 var(--ink); }
 
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin: 28px 0 0; }
 .btn {
@@ -237,6 +240,8 @@ footer nav a { padding: 6px 0; }
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-shot { order: -1; }
+  .hero-stage { padding-bottom: 55%; }
+  .hero-window { width: 62%; top: auto; bottom: 0; }
   .how, .widths { grid-template-columns: 1fr; }
   .how figure { max-width: 420px; }
 }
