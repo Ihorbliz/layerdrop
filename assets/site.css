@@ -195,13 +195,6 @@ figcaption { margin-top: 10px; font: 400 15px/1.45 var(--sans); }
 .compare th.group { font: 500 13px/1.4 var(--mono); letter-spacing: .03em; text-transform: uppercase; padding-top: 28px; }
 .table-skip { display: none; margin-top: 20px; padding: 10px 0; font-weight: 600; }
 
-/* Pricing */
-.plans { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
-.plan { padding: 28px clamp(24px, 3vw, 48px) 32px 0; }
-.plan + .plan { padding-left: clamp(24px, 3vw, 48px); padding-right: 0; border-left: 3px solid var(--ink); }
-.plan h3 { font: var(--display-weight) clamp(44px, 5.4vw, 96px)/1.05 var(--display); text-transform: uppercase; color: var(--blue); }
-.plans-note { margin-top: 20px; }
-
 /* Steps */
 .window-sheet { --fold: 32px; }
 .how { display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: 40px clamp(32px, 6vw, 96px); align-items: start; }
@@ -284,9 +277,6 @@ footer nav a { padding: 6px 0; }
   .ways > div + div { padding: 22px 0; border-left: 0; border-top: 3px solid var(--ink); }
   html[lang="uk"] h1 { font-size: 14.4vw; }
   html[lang="en"] h1 { font-size: 18.5vw; }
-  .plans { grid-template-columns: 1fr; }
-  .plan, .plan + .plan { padding: 20px 0; border-left: 0; }
-  .plan + .plan { border-top: 3px solid var(--ink); }
   .faq summary { font-size: 18px; }
   .faq details > div { padding-right: 0; }
   .top { padding-block: 14px; gap: 10px 16px; }
