@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layerdrop - HTML to Layout: a Figma plugin that turns HTML and saved websites into layers</title>
+<meta name="description" content="A free Figma plugin: HTML, saved websites, zip files, folders and emails become editable layers with auto layout and styles. No server of its own.">
+<link rel="canonical" href="https://ihorbliz.github.io/layerdrop/en/">
+<link rel="alternate" hreflang="uk" href="https://ihorbliz.github.io/layerdrop/">
+<link rel="alternate" hreflang="en" href="https://ihorbliz.github.io/layerdrop/en/">
+<link rel="alternate" hreflang="x-default" href="https://ihorbliz.github.io/layerdrop/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Layerdrop - HTML to Layout: HTML and saved websites become Figma layers">
+<meta property="og:description" content="Files, zip archives, folders, emails and pasted code. Editable layers, auto layout and styles. No server of its own.">
+<meta property="og:url" content="https://ihorbliz.github.io/layerdrop/en/">
+<meta property="og:image" content="https://ihorbliz.github.io/layerdrop/assets/shots/share-cover.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F4EE">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-128.png" type="image/png">
+<link rel="preload" href="../assets/fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/community-link.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="logo" href="./"><img src="../assets/icon.svg" alt="" width="34" height="34">Layerdrop</a>
+  <nav aria-label="Sections">
+    <a href="#features">Features</a>
+    <a href="#compare">Compare</a>
+    <a href="#install">Install</a>
+    <a href="#limits">Limits</a>
+    <a href="#faq">Questions</a>
+    <a href="privacy/">Privacy</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <a href="../" hreflang="uk" lang="uk">Укр</a>
+    <span aria-current="true">Eng</span>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <p class="mono">Layerdrop - HTML to Layout. A free Figma plugin</p>
+  <h1>Drop a file.<br>Get <span class="ink2">layers</span></h1>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="lede">Layerdrop turns HTML, saved websites, archives and emails into editable Figma layers. The result looks like the page in a browser.</p>
+      <div class="actions">
+        <a class="btn" href="#features" data-community-pending>See what it does</a>
+        <a class="btn" href="#" data-community-link hidden>Open on Figma Community</a>
+      </div>
+      <p class="status" data-community-pending>The plugin is being prepared for Figma Community and can't be installed yet.</p>
+    </div>
+    <figure class="hero-shot">
+      <div class="sheet"><img src="../assets/shots/frame-1920.png" width="1920" height="864" alt="An invented demo page for the Hollow Pear ceramics studio at 1920 wide: menu, large heading, buttons and a vector illustration."></div>
+      <figcaption>A demo page for an invented studio, made for this site. It's shown as a browser renders it.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="features">
+  <h2>What lands <span class="ink2">in Figma</span></h2>
+  <p class="lede">The plugin opens the page the way a browser shows it and builds layers from that. The page stays whole: nothing gets split into pieces or cropped.</p>
+  <ul class="rows">
+    <li><span class="label">Section and frames</span><div class="text">Each file becomes a section holding one frame per selected viewport. A frame is as wide as its viewport and as tall as the page.</div></li>
+    <li><span class="label">Auto layout</span><div class="text">Containers are broken down into nested rows and columns, including grids and blocks with uneven gaps. Auto layout stays only where no layer moved by more than 1 px. Overlapping layers stay absolute. You can turn this off.</div></li>
+    <li><span class="label">Color and text</span><div class="text">A color or text setting that appears at least twice becomes a local style. Importing the same page again reuses those styles. You can turn this off too.</div></li>
+    <li><span class="label">Layer names</span><div class="text">Layers are named after what they contain: <code>Header</code>, <code>Button · Get started</code>, <code>H2 · Pricing</code>. Utility classes like <code>css-1a2b</code> stay out of the names.</div></li>
+    <li><span class="label">Gradients and SVG</span><div class="text">Linear, radial and conic gradients arrive as real Figma gradients, so you can edit their colors and stops. SVG becomes vector, not a picture.</div></li>
+    <li><span class="label">Missing fonts</span><div class="text">If a font isn't in Figma but its file is in the HTML or zip, the text arrives as outlines next to a hidden text layer. The plugin lists what to install, and the "Update fonts" button makes the text editable.
+      <img src="../assets/shots/fonts-warning.png" width="627" height="152" loading="lazy" alt="A block in the plugin window: JetBrains Mono is missing from Figma in three weights, and after installing it you click Update fonts."></div></li>
+    <li><span class="label">Failures</span><div class="text">A broken element, file or font doesn't stop the import. The plugin skips what failed and describes it in the warnings.</div></li>
+  </ul>
+
+  <h2 class="subhead">Any <span class="ink2">width</span></h2>
+  <div class="widths">
+    <div>
+      <div class="bar"><img src="../assets/shots/viewport-bar.png" width="904" height="100" loading="lazy" alt="Viewport switches in the plugin window: 1920, 1440, 1024, 768 and 390."></div>
+      <p>The presets are 1920, 1440, 1024, 768 and 390. Click to switch a viewport on or off, or click its number to set your own width.</p>
+      <p>A responsive page reflows as it does in a browser. A non-responsive one keeps its size and runs past the frame edge without being cropped.</p>
+    </div>
+    <div class="viewports">
+      <figure>
+        <div class="sheet"><img src="../assets/shots/frame-768.png" width="768" height="941" loading="lazy" alt="The same demo page at 768 wide."></div>
+        <figcaption>768 px</figcaption>
+      </figure>
+      <figure>
+        <div class="sheet"><img src="../assets/shots/frame-390.png" width="390" height="829" loading="lazy" alt="The same demo page at 390 wide."></div>
+        <figcaption>390 px</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="ways">
+  <h2>Two <span class="ink2">routes</span></h2>
+  <div class="ways">
+    <div>
+      <h3>Drop a file</h3>
+      <p>For finished pages, saved websites and pages behind a login. Anything your browser can open, you can save and import.</p>
+      <ul>
+        <li>Images, stylesheets, fonts and scripts in a folder or zip are picked up by relative path.</li>
+        <li>A single file from the <a href="https://github.com/gildas-lormeau/SingleFile" rel="noopener">SingleFile</a> extension already contains its images, styles and fonts.</li>
+        <li>One catch: folders have to be dragged in, the file picker won't take them.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Paste code</h3>
+      <p>For snippets, email templates and generated markup. On the Code tab, paste HTML and click "Import to Figma".</p>
+      <ul>
+        <li>There are no files next to pasted code, so local paths won't work.</li>
+        <li>Images must be embedded as base64 or sit behind an https link on a server that allows CORS.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="formats">
+    <h3>What you can drop</h3>
+    <ul class="rows">
+      <li><span class="label">HTML</span><div class="text"><code>.html</code>, <code>.htm</code>, one file or several, each imported separately. You can also select HTML together with its images.</div></li>
+      <li><span class="label">Saved websites</span><div class="text"><code>.mhtml</code>, <code>.mht</code>, or HTML from SingleFile.</div></li>
+      <li><span class="label">Folders and archives</span><div class="text">A folder or <code>.zip</code>, including a Google Stitch archive. The top-level <code>index.html</code> is imported, or every HTML file if there isn't one.</div></li>
+      <li><span class="label">Emails</span><div class="text"><code>.eml</code>, <code>.emlx</code>, <code>.msg</code>. The frame takes its name from the subject.</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="compare">
+  <h2 id="compare-title">Compare</h2>
+  <p class="lede">Layerdrop doesn't do everything. If you need import by URL, hover states, dark mode or prototype links, Pagelift or html.to.design will suit you better.</p>
+  <p class="note">Taken from these tools' public pages, checked on 6 November 2026. We haven't compared the tools themselves on the same websites. "Not stated" means we didn't find it on those pages, not that the feature is missing.</p>
+  <a class="table-skip" href="#how">Skip the table</a>
+  <table class="compare" role="table" aria-labelledby="compare-title">
+    <thead role="rowgroup">
+      <tr role="row">
+        <th role="columnheader" scope="col">Feature</th>
+        <th role="columnheader" scope="col" class="us">Layerdrop</th>
+        <th role="columnheader" scope="col">Pagelift</th>
+        <th role="columnheader" scope="col">html.to.design</th>
+        <th role="columnheader" scope="col">Figma extension</th>
+      </tr>
+    </thead>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Access</th></tr>
+      <tr role="row"><th role="rowheader" scope="row">Price</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Free</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Free</b>No import limit.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Partly</b>10 imports, then 10 a month with a free account. PRO: $12 a month billed yearly, or $18 monthly.</span></td>
+        <td role="cell" data-label="Figma ext."><span><b class="v">Figma plans</b>Professional, Education, Organization, Enterprise.</span></td></tr>
+      <tr role="row"><th role="rowheader" scope="row">Where to get it</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Not published yet</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Published</b>Figma Community and Chrome Web Store.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Published</b>Figma plugin and browser extension.</span></td>
+        <td role="cell" data-label="Figma ext."><span><b class="v">Published</b>Chrome extension.</span></td></tr>
+    </tbody>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">What you can import</th></tr>
+      <tr role="row"><th role="rowheader" scope="row">Import by URL</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">No</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b>Up to five public pages.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b>Public websites.</span></td>
+        <td role="cell" data-label="Figma ext."><span><b class="v ns">Not stated</b>Captures in the browser.</span></td></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">Pages behind a login</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Via a file</b>Save the page with SingleFile and drop the file.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b>Its own Chrome extension.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b>Its own extension.</span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">HTML, zip, MHTML</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Yes</b>Folders too.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Partly</b>Mentions the file from its own extension.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Pagelift, Figma ext."><th role="rowheader" scope="row">Emails .eml, .emlx, .msg</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Pagelift"><span><b class="v ns">Not stated</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Pagelift, Figma ext."><th role="rowheader" scope="row">Pasted code</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Pagelift"><span><b class="v ns">Not stated</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b>HTML and CSS editor.</span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row"><th role="rowheader" scope="row">JavaScript pages</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Yes</b>Scripts run in an isolated frame.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Via extension</b>Scripts don't run on URL import.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Via extension</b>Captures what the tab shows.</span></td>
+        <td role="cell" data-label="Figma ext."><span><b class="v">Partly</b>Heavy animation and canvas may capture imperfectly.</span></td></tr>
+    </tbody>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">What you get</th></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">Viewport widths</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Any</b>1920, 1440, 1024, 768, 390, each editable.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Three</b>1440, 768, 390.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b>Desktop, tablet, mobile.</span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">Auto layout</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Yes</b>Only where nothing moves.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b>Only where nothing moves.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row"><th role="rowheader" scope="row">Local styles</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Yes</b>Color and text.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b>Color and text.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b>Styles and variables.</span></td>
+        <td role="cell" data-label="Figma ext."><span><b class="v n">No</b>Plain layers, can bind existing variables.</span></td></tr>
+      <tr role="row" data-unstated="Not stated: Pagelift, Figma ext."><th role="rowheader" scope="row">Missing fonts</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Outlines</b>A list of what to install, plus "Update fonts".</span></td>
+        <td role="cell" class="ns-cell" data-label="Pagelift"><span><b class="v ns">Not stated</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Replacement</b>Map to fonts you have, or download from the plugin.</span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">Hover states</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">No</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">Dark mode</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">No</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+      <tr role="row" data-unstated="Not stated: Figma ext."><th role="rowheader" scope="row">Prototype links</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">No</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Yes</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Yes</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+    </tbody>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Data</th></tr>
+      <tr role="row" data-unstated="Not stated: html.to.design, Figma ext."><th role="rowheader" scope="row">Where data goes</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">No server of its own</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">It depends</b>The extension works locally. On URL import the page passes through their proxy on Cloudflare, which they say keeps nothing.</span></td>
+        <td role="cell" class="ns-cell" data-label="html.to.design"><span><b class="v ns">Not stated</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Figma ext."><span><b class="v ns">Not stated</b></span></td></tr>
+    </tbody>
+  </table>
+  <div class="sources">
+    <b>Sources, 6 November 2026:</b>
+    <ul>
+      <li><a href="https://sidag45.github.io/pagelift/" rel="noopener">Pagelift's page</a></li>
+      <li>html.to.design: <a href="https://html.to.design/docs/free-features/" rel="noopener">features</a>, <a href="https://html.to.design/docs/pro-plan/" rel="noopener">PRO plan</a></li>
+      <li><a href="https://help.figma.com/hc/en-us/articles/40826832449303-Turn-coded-screens-into-editable-design-layers" rel="noopener">Figma's help article on capturing pages</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How it <span class="ink2">works</span></h2>
+  <div class="how">
+    <div>
+      <ol class="rows steps">
+        <li><span class="num">1</span><div class="text">Pick one or more viewports.</div></li>
+        <li><span class="num">2</span><div class="text">Change the layer settings if you need to: auto layout and local styles. Your choice is remembered.</div></li>
+        <li><span class="num">3</span><div class="text">Drop a file into the window and click "Import". Files stay in the list, so you can import them again with other viewports.</div></li>
+        <li><span class="num">4</span><div class="text">A section appears on the canvas. The window shows how many frames, layers and new styles were made, and warns you if something didn't transfer.</div></li>
+      </ol>
+      <p class="after">The plugin opens the page in an isolated frame, where its scripts run and the browser lays it out at the width you chose. Then the plugin reads the result and builds layers from it. Scroll animations appear in their final state.</p>
+    </div>
+    <figure>
+      <div class="sheet window-sheet"><img src="../assets/shots/window.png" width="627" height="694" loading="lazy" alt="The plugin window: viewport switches, layer settings, the chosen file, the Import button and a summary with the number of layers and styles."></div>
+      <figcaption>The window after an import, with the file name hidden.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="install">
+  <h2>Install</h2>
+  <p class="status gap-b" data-community-pending>Layerdrop isn't on Figma Community yet, so it can't be installed for now. Once the plugin passes review, the link will appear here.</p>
+  <p class="gap-b" data-community-link hidden><a class="btn" href="#" data-community-link hidden>Open on Figma Community</a></p>
+  <p class="mono pending-label" data-community-pending>Once published, it will go like this</p>
+  <ol class="rows steps">
+    <li><span class="num">1</span><div class="text">Open the Layerdrop page on Figma Community.</div></li>
+    <li><span class="num">2</span><div class="text">Run the plugin in a design file. It works in Figma Design only.</div></li>
+    <li><span class="num">3</span><div class="text">After that, find Layerdrop in Figma's plugins menu.</div></li>
+  </ol>
+</section>
+
+<div class="band" id="privacy">
+  <h2><span class="ink2">No server</span> of its own</h2>
+  <p class="lede">Your files stay on your computer and in your Figma file. The plugin sends no files to us and collects no analytics.</p>
+  <ul class="rows">
+    <li><span class="label">Requests</span><div class="text">A page loads whatever it links to. If a font fails to load, the plugin requests it from Google Fonts by name.</div></li>
+    <li><span class="label">Page scripts</span><div class="text">They run in an isolated frame. They can make internet requests, but can't reach the plugin or your Figma file. Don't import pages you don't trust.</div></li>
+  </ul>
+  <p class="privacy-link"><a href="privacy/">Full privacy policy</a></p>
+</div>
+
+<section id="limits">
+  <h2>Limits</h2>
+  <p class="lede">Better to know these before you import.</p>
+  <ul class="rows">
+    <li><span class="label">Not in the plugin</span><div class="text">Import by URL, prototype links, dark mode and hover states.</div></li>
+    <li><span class="label">Extra frames</span><div class="text">To keep things in place, auto layout adds transparent <code>Row</code> and <code>Column</code> frames, so nesting can get deeper than you'd like.</div></li>
+    <li><span class="label">No auto layout</span><div class="text">Frames with masks, and frames where layout would move a layer by more than 1 px, stay as they are. Overlapping and rotated layers inside an auto layout frame stay absolute.</div></li>
+    <li><span class="label">CSS</span><div class="text"><code>clip-path</code> and <code>skew</code> don't transfer. Composite masks transfer partly. SVG masks by URL don't transfer, and the plugin warns you about them.</div></li>
+    <li><span class="label">CORS</span><div class="text">Files a saved site links to through <code>/path</code> or another server load only if that server allows it. Otherwise you get a gray placeholder.</div></li>
+    <li><span class="label">Fonts</span><div class="text">A font missing from Figma has to be installed on your computer. Outlines are built only if the font file is in the HTML or zip. Line breaks can differ slightly from the browser.</div></li>
+    <li><span class="label">Tiling</span><div class="text">Tiled backgrounds (<code>background-size</code>) and SVG repeated in a background come in as images.</div></li>
+    <li><span class="label">Files</span><div class="text">zip64 and password-protected archives aren't supported. A <code>.msg</code> email with HTML only in compressed RTF imports as plain text.</div></li>
+    <li><span class="label">Hangs</span><div class="text">A page with an infinite loop in a script can freeze the window, and then you have to restart the plugin. With Figma minimized, an import can stop after 60 seconds and has to be repeated.</div></li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>Questions</h2>
+  <div class="faq">
+    <details><summary>How much does it cost?</summary><div>Layerdrop is free, and there is no paid version.</div></details>
+    <details><summary>Why can't I just paste a URL?</summary><div>Browsers don't let a plugin read other websites directly, so URL import needs a server in the middle. Layerdrop has none. Save the page with SingleFile and drop the file instead: its scripts have already run, and this works for pages behind a login too.</div></details>
+    <details><summary>Where do my files go?</summary><div>Nowhere, because the plugin has no server to send them to. The only requests come from the page itself and, for a font that failed to load, from the plugin to Google Fonts. See the <a href="privacy/">privacy policy</a> for details.</div></details>
+    <details><summary>Is it safe to run a page's scripts?</summary><div>The page runs in an isolated frame and can't reach the plugin or your Figma file. But its scripts can make their own internet requests, and an infinite loop can freeze the window. Don't import pages you don't trust.</div></details>
+    <details><summary>Why did my images turn gray?</summary><div>The plugin couldn't get the file: there was no folder next to it, or the server doesn't allow CORS. Drop a folder or zip, or save the page with SingleFile, which embeds images in the file.</div></details>
+    <details><summary>Why are there Row and Column frames?</summary><div>They keep elements in place when a grid or uneven blocks get broken down into nested rows and columns. If they get in the way, turn off auto layout in the layer settings.</div></details>
+    <details><summary>Does it work in Figma in the browser?</summary><div>So far we've only run it in the Figma desktop app. We'll confirm this after publication.</div></details>
+    <details><summary>What languages does the window support?</summary><div>English and Ukrainian, with a switch at the top. Layer names and canvas notifications are always in English, and text from the page isn't translated.</div></details>
+    <details><summary>Can I import someone else's website?</summary><div>Technically the plugin imports whatever you can open. Whether you have the right to depends on the site and your purpose. Respect copyright and trademarks.</div></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="./"><img src="../assets/icon.svg" alt="" width="28" height="28">Layerdrop</a>
+  <nav aria-label="Sections"><a href="#features">Features</a><a href="#compare">Compare</a><a href="#install">Install</a><a href="#limits">Limits</a><a href="#faq">Questions</a></nav>
+  <p>This page describes version 2.0. <a href="privacy/">Privacy</a></p>
+  <p>An independent plugin, not affiliated with Figma, Inc. Figma is a trademark of Figma, Inc.</p>
+</footer>
+</body>
+</html>

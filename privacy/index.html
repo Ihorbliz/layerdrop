@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Приватність: Layerdrop - HTML to Layout</title>
+<meta name="description" content="Які дані обробляє плагін Layerdrop - HTML to Layout і цей сайт. Власного сервера й аналітики в плагіна немає.">
+<link rel="canonical" href="https://ihorbliz.github.io/layerdrop/privacy/">
+<link rel="alternate" hreflang="uk" href="https://ihorbliz.github.io/layerdrop/privacy/">
+<link rel="alternate" hreflang="en" href="https://ihorbliz.github.io/layerdrop/en/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://ihorbliz.github.io/layerdrop/en/privacy/">
+<meta name="theme-color" content="#F4F4EE">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-128.png" type="image/png">
+<link rel="preload" href="../assets/fonts/fira-sans-extra-condensed-900-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/community-link.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">До вмісту</a>
+<header class="top">
+  <a class="logo" href="../"><img src="../assets/icon.svg" alt="" width="34" height="34">Layerdrop</a>
+  <nav aria-label="Розділи">
+    <a href="../#features">Функції</a>
+    <a href="../#compare">Порівняння</a>
+    <a href="../#install">Встановлення</a>
+    <a href="../#limits">Обмеження</a>
+    <a href="../#faq">Питання</a>
+    <a href="./" aria-current="page">Приватність</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Мова">
+    <span aria-current="true">Укр</span>
+    <a href="../en/privacy/" hreflang="en" lang="en">Eng</a>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <p class="mono">Оновлено 6 листопада 2026 року</p>
+  <h1>Приватність</h1>
+  <p class="lede">Layerdrop не має власного сервера, облікових записів і аналітики. Ваші файли лишаються на вашому комп'ютері та у файлі Figma.</p>
+
+  <h2>Що робить плагін</h2>
+  <ul class="rows">
+    <li><span class="label">Ваші файли</span><div class="text">HTML, архіви, листи й вставлений код обробляються локально у вікні плагіна. Нам вони не надсилаються, бо надсилати немає куди.</div></li>
+    <li><span class="label">Файл Figma</span><div class="text">Плагін створює в ньому шари й стилі. Дані з файла Figma нікуди не надсилаються.</div></li>
+    <li><span class="label">Що зберігається</span><div class="text">На вашому пристрої через сховище плагіна у Figma: вибрана мова й налаштування шарів. У самих шарах: дані про потрібні шрифти для кнопки «Оновити шрифти».</div></li>
+    <li><span class="label">Аналітика</span><div class="text">Немає. Плагін не збирає статистику використання й не вимагає реєстрації.</div></li>
+  </ul>
+
+  <h2>Які запити бувають</h2>
+  <p class="body-text gap-b">Щоб сторінка виглядала як у браузері, плагін відкриває її в ізольованому вікні. Тому мережа все ж використовується:</p>
+  <ul class="rows">
+    <li><span class="label">Ресурси сторінки</span><div class="text">Картинки, стилі, шрифти й скрипти, на які посилається сама сторінка, завантажуються звідти, де лежать. Власники цих серверів можуть бачити такі запити, як і під час звичайного відкриття сторінки в браузері.</div></li>
+    <li><span class="label">Google Fonts</span><div class="text">Якщо шрифт не завантажився, плагін запитує його в Google Fonts за назвою. Вміст ваших файлів при цьому не передається.</div></li>
+    <li><span class="label">Скрипти сторінки</span><div class="text">Вони виконуються в ізольованому вікні (<code>sandbox="allow-scripts"</code>) і не мають доступу до плагіна та файла Figma. Але вони можуть робити власні запити в інтернет і передавати те, що є на самій сторінці. Не імпортуйте сторінки, яким не довіряєте.</div></li>
+    <li><span class="label">Доступ до мережі</span><div class="text">Figma показує для плагіна мітку Unrestricted, бо сторінка може посилатися на будь-який домен, і наперед їх не знати.</div></li>
+  </ul>
+
+  <h2>Цей сайт</h2>
+  <ul class="rows">
+    <li><span class="label">Що тут є</span><div class="text">Статичні сторінки. Без форм, cookie й аналітики. Шрифти лежать на самому сайті.</div></li>
+    <li><span class="label">Хостинг</span><div class="text">Сайт розміщено на GitHub Pages. GitHub може обробляти технічні дані відвідувань, зокрема IP-адресу, за власною політикою.</div></li>
+  </ul>
+
+  <h2>Контакт</h2>
+  <p class="body-text">Контакт підтримки буде вказано на сторінці плагіна у Figma Community після публікації.</p>
+</main>
+
+<footer>
+  <a class="logo" href="../"><img src="../assets/icon.svg" alt="" width="28" height="28">Layerdrop</a>
+  <p>Незалежний плагін, не пов'язаний із Figma, Inc. Figma є торговою маркою Figma, Inc.</p>
+</footer>
+</body>
+</html>

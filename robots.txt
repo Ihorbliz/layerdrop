@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ihorbliz.github.io/layerdrop/sitemap.xml

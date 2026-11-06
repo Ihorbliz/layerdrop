@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy: Layerdrop - HTML to Layout</title>
+<meta name="description" content="What data the Layerdrop - HTML to Layout plugin and this website handle. The plugin has no server of its own and no analytics.">
+<link rel="canonical" href="https://ihorbliz.github.io/layerdrop/en/privacy/">
+<link rel="alternate" hreflang="uk" href="https://ihorbliz.github.io/layerdrop/privacy/">
+<link rel="alternate" hreflang="en" href="https://ihorbliz.github.io/layerdrop/en/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://ihorbliz.github.io/layerdrop/en/privacy/">
+<meta name="theme-color" content="#F4F4EE">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-128.png" type="image/png">
+<link rel="preload" href="../../assets/fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/community-link.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="logo" href="../"><img src="../../assets/icon.svg" alt="" width="34" height="34">Layerdrop</a>
+  <nav aria-label="Sections">
+    <a href="../#features">Features</a>
+    <a href="../#compare">Compare</a>
+    <a href="../#install">Install</a>
+    <a href="../#limits">Limits</a>
+    <a href="../#faq">Questions</a>
+    <a href="./" aria-current="page">Privacy</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <a href="../../privacy/" hreflang="uk" lang="uk">Укр</a>
+    <span aria-current="true">Eng</span>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <p class="mono">Updated 6 November 2026</p>
+  <h1>Privacy</h1>
+  <p class="lede">Layerdrop has no server of its own, no accounts and no analytics. Your files stay on your computer and in your Figma file.</p>
+
+  <h2>What the plugin does</h2>
+  <ul class="rows">
+    <li><span class="label">Your files</span><div class="text">HTML, archives, emails and pasted code are processed locally in the plugin window. They aren't sent to us, because there is nowhere to send them.</div></li>
+    <li><span class="label">Your Figma file</span><div class="text">The plugin creates layers and styles in it. Data from your Figma file isn't sent anywhere.</div></li>
+    <li><span class="label">What is stored</span><div class="text">On your device, in Figma's plugin storage: your language and layer settings. In the layers themselves: which fonts are needed, for the "Update fonts" button.</div></li>
+    <li><span class="label">Analytics</span><div class="text">None. The plugin collects no usage statistics and needs no sign-up.</div></li>
+  </ul>
+
+  <h2>What requests happen</h2>
+  <p class="body-text gap-b">To make a page look the way it does in a browser, the plugin opens it in an isolated frame. So the network is still used:</p>
+  <ul class="rows">
+    <li><span class="label">Page resources</span><div class="text">Images, stylesheets, fonts and scripts the page links to load from where they're hosted. Those servers can see the requests, just as when the page opens in a normal browser.</div></li>
+    <li><span class="label">Google Fonts</span><div class="text">If a font fails to load, the plugin requests it from Google Fonts by name. The contents of your files aren't sent.</div></li>
+    <li><span class="label">Page scripts</span><div class="text">They run in an isolated frame (<code>sandbox="allow-scripts"</code>) and can't reach the plugin or your Figma file. But they can make their own internet requests and send what's on the page itself. Don't import pages you don't trust.</div></li>
+    <li><span class="label">Network access</span><div class="text">Figma shows an Unrestricted label for the plugin, because a page can link to any domain and those can't be known in advance.</div></li>
+  </ul>
+
+  <h2>This website</h2>
+  <ul class="rows">
+    <li><span class="label">What's here</span><div class="text">Static pages. No forms, cookies or analytics. Fonts are served from this site.</div></li>
+    <li><span class="label">Hosting</span><div class="text">The site is hosted on GitHub Pages. GitHub may process technical visit data, including your IP address, under its own policy.</div></li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p class="body-text">A support contact will be listed on the plugin's Figma Community page after publication.</p>
+</main>
+
+<footer>
+  <a class="logo" href="../"><img src="../../assets/icon.svg" alt="" width="28" height="28">Layerdrop</a>
+  <p>An independent plugin, not affiliated with Figma, Inc. Figma is a trademark of Figma, Inc.</p>
+</footer>
+</body>
+</html>

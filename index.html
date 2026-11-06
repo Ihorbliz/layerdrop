@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layerdrop - HTML to Layout: плагін Figma, що перетворює HTML і збережені сайти на шари</title>
+<meta name="description" content="Безкоштовний плагін Figma: HTML, збережені сайти, zip, папки й листи стають редагованими шарами з auto layout і стилями. Власного сервера немає.">
+<link rel="canonical" href="https://ihorbliz.github.io/layerdrop/">
+<link rel="alternate" hreflang="uk" href="https://ihorbliz.github.io/layerdrop/">
+<link rel="alternate" hreflang="en" href="https://ihorbliz.github.io/layerdrop/en/">
+<link rel="alternate" hreflang="x-default" href="https://ihorbliz.github.io/layerdrop/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Layerdrop - HTML to Layout: HTML і збережені сайти стають шарами Figma">
+<meta property="og:description" content="Файли, zip, папки, листи й вставлений код. Редаговані шари, auto layout і стилі. Власного сервера немає.">
+<meta property="og:url" content="https://ihorbliz.github.io/layerdrop/">
+<meta property="og:image" content="https://ihorbliz.github.io/layerdrop/assets/shots/share-cover.png">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F4EE">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icon-128.png" type="image/png">
+<link rel="preload" href="assets/fonts/fira-sans-extra-condensed-900-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/community-link.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">До вмісту</a>
+<header class="top">
+  <a class="logo" href="./"><img src="assets/icon.svg" alt="" width="34" height="34">Layerdrop</a>
+  <nav aria-label="Розділи">
+    <a href="#features">Функції</a>
+    <a href="#compare">Порівняння</a>
+    <a href="#install">Встановлення</a>
+    <a href="#limits">Обмеження</a>
+    <a href="#faq">Питання</a>
+    <a href="privacy/">Приватність</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Мова">
+    <span aria-current="true">Укр</span>
+    <a href="en/" hreflang="en" lang="en">Eng</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <p class="mono">Layerdrop - HTML to Layout. Безкоштовний плагін Figma</p>
+  <h1>Киньте файл.<br>Отримайте <span class="ink2">шари</span></h1>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="lede">Layerdrop перетворює HTML, збережені сайти, архіви й листи на редаговані шари Figma. Результат виглядає як сторінка в браузері.</p>
+      <div class="actions">
+        <a class="btn" href="#features" data-community-pending>Що він уміє</a>
+        <a class="btn" href="#" data-community-link hidden>Відкрити у Figma Community</a>
+      </div>
+      <p class="status" data-community-pending>Плагін готується до публікації у Figma Community і поки недоступний для встановлення.</p>
+    </div>
+    <figure class="hero-shot">
+      <div class="sheet"><img src="assets/shots/frame-1920.png" width="1920" height="864" alt="Вигадана демосторінка студії кераміки Hollow Pear на ширині 1920: меню, великий заголовок, кнопки й векторна ілюстрація."></div>
+      <figcaption>Демосторінка вигаданої студії, зроблена для цього сайту. Показано її вигляд у браузері.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Що виходить <span class="ink2">у Figma</span></h2>
+  <p class="lede">Плагін відкриває сторінку так, як її показує браузер, і збирає з неї шари. Сторінка лишається цілою: без розбиття на шматки й без обрізання.</p>
+  <ul class="rows">
+    <li><span class="label">Секція й фрейми</span><div class="text">Кожен файл стає секцією, а в ній лежить по фрейму на кожен вибраний viewport. Ширина фрейма дорівнює viewport, а висота дорівнює висоті сторінки.</div></li>
+    <li><span class="label">Auto layout</span><div class="text">Контейнери розбираються на вкладені рядки й колонки, зокрема сітки та блоки з різними проміжками. Auto layout лишається лише там, де жоден шар не зсунувся більш ніж на 1 px. Шари, що перекриваються, лишаються абсолютними. Функцію можна вимкнути.</div></li>
+    <li><span class="label">Кольори й текст</span><div class="text">Колір або налаштування тексту, що трапляється щонайменше двічі, стає локальним стилем. Під час повторного імпорту тієї самої сторінки стилі використовуються повторно. Це теж можна вимкнути.</div></li>
+    <li><span class="label">Назви шарів</span><div class="text">Шари названі англійською за змістом: <code>Header</code>, <code>Button · Get started</code>, <code>H2 · Pricing</code>. Службові класи на кшталт <code>css-1a2b</code> у назви не потрапляють.</div></li>
+    <li><span class="label">Градієнти й SVG</span><div class="text">Лінійні, радіальні й конічні градієнти переносяться як справжні градієнти Figma, тому кольори й точки можна редагувати. SVG стає вектором, а не картинкою.</div></li>
+    <li><span class="label">Відсутні шрифти</span><div class="text">Якщо шрифту немає у Figma, а його файл є у HTML або zip, текст приходить контурами поруч із прихованим текстовим шаром. Плагін показує, що встановити, а кнопка «Оновити шрифти» робить текст редагованим.
+      <img src="assets/shots/fonts-warning.png" width="627" height="152" loading="lazy" alt="Блок у вікні плагіна англійською: у Figma бракує шрифту JetBrains Mono трьох накреслень, після встановлення треба натиснути Update fonts."></div></li>
+    <li><span class="label">Збої</span><div class="text">Збій окремого елемента, файла чи шрифту не зупиняє імпорт. Плагін пропускає проблемний елемент і описує це в попередженнях.</div></li>
+  </ul>
+
+  <h2 class="subhead">Будь-яка <span class="ink2">ширина</span></h2>
+  <div class="widths">
+    <div>
+      <div class="bar"><img src="assets/shots/viewport-bar.png" width="904" height="100" loading="lazy" alt="Перемикачі viewport у вікні плагіна: 1920, 1440, 1024, 768 і 390."></div>
+      <p>Готові значення: 1920, 1440, 1024, 768 і 390. Натискання вмикає чи вимикає viewport, а натискання на число дає вказати свою ширину.</p>
+      <p>Адаптивна сторінка перебудовується, як у браузері. Неадаптивна лишається свого розміру й виходить за межі фрейма, але не обрізається.</p>
+    </div>
+    <div class="viewports">
+      <figure>
+        <div class="sheet"><img src="assets/shots/frame-768.png" width="768" height="941" loading="lazy" alt="Та сама демосторінка на ширині 768."></div>
+        <figcaption>768 px</figcaption>
+      </figure>
+      <figure>
+        <div class="sheet"><img src="assets/shots/frame-390.png" width="390" height="829" loading="lazy" alt="Та сама демосторінка на ширині 390."></div>
+        <figcaption>390 px</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="ways">
+  <h2>Два <span class="ink2">способи</span></h2>
+  <div class="ways">
+    <div>
+      <h3>Кинути файл</h3>
+      <p>Для готових сторінок, збережених сайтів і сторінок за логіном. Те, що відкривається у вашому браузері, можна зберегти й імпортувати.</p>
+      <ul>
+        <li>Картинки, стилі, шрифти й скрипти з папки чи zip підтягуються за відносними шляхами.</li>
+        <li>Один файл із розширення <a href="https://github.com/gildas-lormeau/SingleFile" rel="noopener">SingleFile</a> уже містить картинки, стилі й шрифти.</li>
+        <li>Обмеження: папку треба перетягувати, кнопка вибору файлів її не приймає.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Вставити код</h3>
+      <p>Для фрагментів, шаблонів листів і згенерованої розмітки. На вкладці «Код» вставте HTML і натисніть «Імпортувати у Figma».</p>
+      <ul>
+        <li>Поруч із кодом немає файлів, тому локальні шляхи не спрацюють.</li>
+        <li>Картинки мають бути вбудовані в base64 або лежати за https-посиланням на сервері, який дозволяє CORS.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="formats">
+    <h3>Що можна кинути</h3>
+    <ul class="rows">
+      <li><span class="label">HTML</span><div class="text"><code>.html</code>, <code>.htm</code>, один файл або кілька, кожен імпортується окремо. HTML разом із картинками теж можна виділити одразу.</div></li>
+      <li><span class="label">Збережені сайти</span><div class="text"><code>.mhtml</code>, <code>.mht</code> або HTML із SingleFile.</div></li>
+      <li><span class="label">Папки й архіви</span><div class="text">Папка або <code>.zip</code>, зокрема архів із Google Stitch. Імпортується <code>index.html</code> верхнього рівня, а якщо його немає, усі HTML-файли.</div></li>
+      <li><span class="label">Листи</span><div class="text"><code>.eml</code>, <code>.emlx</code>, <code>.msg</code>. Назва фрейма береться з теми листа.</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="compare">
+  <h2 id="compare-title">Порівняння</h2>
+  <p class="lede">Layerdrop робить не все. Якщо вам потрібен імпорт за посиланням, hover-стани, темна тема чи посилання прототипу, вам більше підійде Pagelift або html.to.design.</p>
+  <p class="note">Дані взято з публічних сторінок цих інструментів, перевірено 6 листопада 2026 року. Самі інструменти на однакових сайтах ми не порівнювали. «Не вказано» означає, що ми не знайшли цього на цих сторінках, а не те, що функції немає.</p>
+  <a class="table-skip" href="#how">Пропустити таблицю</a>
+  <table class="compare" role="table" aria-labelledby="compare-title">
+    <thead role="rowgroup">
+      <tr role="row">
+        <th role="columnheader" scope="col">Що</th>
+        <th role="columnheader" scope="col" class="us">Layerdrop</th>
+        <th role="columnheader" scope="col">Pagelift</th>
+        <th role="columnheader" scope="col">html.to.design</th>
+        <th role="columnheader" scope="col">Розширення Figma</th>
+      </tr>
+    </thead>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Доступ</th></tr>
+      <tr role="row"><th role="rowheader" scope="row">Ціна</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Безкоштовно</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Безкоштовно</b>Без ліміту імпортів.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Частково</b>10 імпортів, далі 10 на місяць із безкоштовним акаунтом. PRO: $12 на місяць за рік або $18 помісячно.</span></td>
+        <td role="cell" data-label="Розшир. Figma"><span><b class="v">Плани Figma</b>Professional, Education, Organization, Enterprise.</span></td></tr>
+      <tr role="row"><th role="rowheader" scope="row">Де доступний</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Ще не опублікований</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Опублікований</b>Figma Community і Chrome Web Store.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Опублікований</b>Плагін Figma й розширення для браузера.</span></td>
+        <td role="cell" data-label="Розшир. Figma"><span><b class="v">Опублікований</b>Розширення Chrome.</span></td></tr>
+    </tbody>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Що можна імпортувати</th></tr>
+      <tr role="row"><th role="rowheader" scope="row">Імпорт за посиланням</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">Ні</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b>До п'яти публічних сторінок.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b>Публічні сайти.</span></td>
+        <td role="cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b>Захоплення у браузері.</span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">Сторінки за логіном</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Через файл</b>Збережіть сторінку в SingleFile й киньте файл.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b>Власне розширення Chrome.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b>Власне розширення.</span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">HTML, zip, MHTML</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Так</b>А також папки.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Частково</b>Згадано файл власного розширення.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Pagelift, Розшир. Figma"><th role="rowheader" scope="row">Листи .eml, .emlx, .msg</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Pagelift"><span><b class="v ns">Не вказано</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Pagelift, Розшир. Figma"><th role="rowheader" scope="row">Вставлений код</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Pagelift"><span><b class="v ns">Не вказано</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b>Редактор HTML і CSS.</span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row"><th role="rowheader" scope="row">Сторінки на JavaScript</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Так</b>Скрипти виконуються в ізольованому вікні.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Через розширення</b>За посиланням скрипти не виконуються.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Через розширення</b>Захоплює те, що видно у вкладці.</span></td>
+        <td role="cell" data-label="Розшир. Figma"><span><b class="v">Частково</b>Важкі анімації й canvas можуть вийти неточно.</span></td></tr>
+    </tbody>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Що виходить</th></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">Ширини viewport</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Будь-яка</b>1920, 1440, 1024, 768, 390, кожну можна змінити.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Три</b>1440, 768, 390.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b>Десктоп, планшет, телефон.</span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">Auto layout</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Так</b>Лише де нічого не зсувається.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b>Лише де нічого не зсувається.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row"><th role="rowheader" scope="row">Локальні стилі</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Так</b>Кольори й текст.</span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b>Кольори й текст.</span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b>Стилі й змінні.</span></td>
+        <td role="cell" data-label="Розшир. Figma"><span><b class="v n">Ні</b>Прості шари, можуть прив'язуватись наявні змінні.</span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Pagelift, Розшир. Figma"><th role="rowheader" scope="row">Відсутні шрифти</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Контури</b>Список, що встановити, і «Оновити шрифти».</span></td>
+        <td role="cell" class="ns-cell" data-label="Pagelift"><span><b class="v ns">Не вказано</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Заміна</b>Зіставлення з наявними або завантаження з плагіна.</span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">Hover-стани</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">Ні</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">Темна тема</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">Ні</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+      <tr role="row" data-unstated="Не вказано: Розшир. Figma"><th role="rowheader" scope="row">Посилання прототипу</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v n">Ні</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Так</b></span></td>
+        <td role="cell" data-label="html.to.design"><span><b class="v">Так</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+    </tbody>
+    <tbody role="rowgroup">
+      <tr role="row" class="group-row"><th role="rowheader" colspan="5" scope="rowgroup" class="group">Дані</th></tr>
+      <tr role="row" data-unstated="Не вказано: html.to.design, Розшир. Figma"><th role="rowheader" scope="row">Куди йдуть дані</th>
+        <td role="cell" class="us" data-label="Layerdrop"><span><b class="v">Власного сервера немає</b></span></td>
+        <td role="cell" data-label="Pagelift"><span><b class="v">Залежить</b>Розширення працює локально. За посиланням сторінка йде через їхній проксі на Cloudflare, який, за їхніми словами, нічого не зберігає.</span></td>
+        <td role="cell" class="ns-cell" data-label="html.to.design"><span><b class="v ns">Не вказано</b></span></td>
+        <td role="cell" class="ns-cell" data-label="Розшир. Figma"><span><b class="v ns">Не вказано</b></span></td></tr>
+    </tbody>
+  </table>
+  <div class="sources">
+    <b>Джерела, 6 листопада 2026 року:</b>
+    <ul>
+      <li><a href="https://sidag45.github.io/pagelift/" rel="noopener">сторінка Pagelift</a></li>
+      <li>html.to.design: <a href="https://html.to.design/docs/free-features/" rel="noopener">функції</a>, <a href="https://html.to.design/docs/pro-plan/" rel="noopener">план PRO</a></li>
+      <li><a href="https://help.figma.com/hc/en-us/articles/40826832449303-Turn-coded-screens-into-editable-design-layers" rel="noopener">довідка Figma про захоплення сторінок</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <h2>Як це <span class="ink2">працює</span></h2>
+  <div class="how">
+    <div>
+      <ol class="rows steps">
+        <li><span class="num">1</span><div class="text">Виберіть один або кілька viewport.</div></li>
+        <li><span class="num">2</span><div class="text">За потреби змініть налаштування шарів: auto layout і локальні стилі. Вибір запам'ятовується.</div></li>
+        <li><span class="num">3</span><div class="text">Киньте файл у вікно й натисніть «Зчитати». Файли лишаються в списку, тому їх можна зчитати ще раз з іншими viewport.</div></li>
+        <li><span class="num">4</span><div class="text">На полотні з'явиться секція, а вікно покаже кількість фреймів, шарів і нових стилів та попередження, якщо щось не перенеслося.</div></li>
+      </ol>
+      <p class="after">Плагін відкриває сторінку в ізольованому вікні, де виконуються її скрипти, а браузер розкладає її на потрібну ширину. Потім плагін зчитує результат і створює з нього шари. Анімації при прокручуванні показуються в кінцевому стані.</p>
+    </div>
+    <figure>
+      <div class="sheet window-sheet"><img src="assets/shots/window.png" width="627" height="694" loading="lazy" alt="Вікно плагіна англійською: перемикачі viewport, блок налаштувань шарів, вибраний файл, кнопка імпорту й підсумок із кількістю шарів і стилів."></div>
+      <figcaption>Вікно після імпорту. Назву файла приховано. Вікно також доступне українською.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="install">
+  <h2>Встановлення</h2>
+  <p class="status gap-b" data-community-pending>Layerdrop ще не опублікований у Figma Community, тому поки встановити його не можна. Коли плагін пройде рецензування, посилання з'явиться тут.</p>
+  <p class="gap-b" data-community-link hidden><a class="btn" href="#" data-community-link hidden>Відкрити у Figma Community</a></p>
+  <p class="mono pending-label" data-community-pending>Після публікації це виглядатиме так</p>
+  <ol class="rows steps">
+    <li><span class="num">1</span><div class="text">Відкрийте сторінку Layerdrop у Figma Community.</div></li>
+    <li><span class="num">2</span><div class="text">Запустіть плагін у файлі дизайну. Він працює лише у Figma Design.</div></li>
+    <li><span class="num">3</span><div class="text">Далі шукайте Layerdrop у меню плагінів Figma.</div></li>
+  </ol>
+</section>
+
+<div class="band" id="privacy">
+  <h2>Власного сервера <span class="ink2">немає</span></h2>
+  <p class="lede">Ваші файли лишаються на вашому комп'ютері та у файлі Figma. Плагін не надсилає нам файли й не збирає аналітику.</p>
+  <ul class="rows">
+    <li><span class="label">Запити</span><div class="text">Сторінка завантажує те, на що посилається сама. Шрифт, який не завантажився, плагін запитує в Google Fonts за назвою.</div></li>
+    <li><span class="label">Скрипти сторінки</span><div class="text">Виконуються в ізольованому вікні. Вони можуть робити запити в інтернет, але не мають доступу до плагіна й файла Figma. Не імпортуйте сторінки, яким не довіряєте.</div></li>
+  </ul>
+  <p class="privacy-link"><a href="privacy/">Повна політика приватності</a></p>
+</div>
+
+<section id="limits">
+  <h2>Обмеження</h2>
+  <p class="lede">Краще знати це до імпорту.</p>
+  <ul class="rows">
+    <li><span class="label">Немає функцій</span><div class="text">Імпорту за посиланням, посилань прототипу, темної теми й hover-станів у плагіні немає.</div></li>
+    <li><span class="label">Додаткові фрейми</span><div class="text">Заради точності auto layout додає прозорі фрейми <code>Row</code> і <code>Column</code>, тому вкладеність буває глибшою, ніж хотілося б.</div></li>
+    <li><span class="label">Без auto layout</span><div class="text">Лишаються фрейми з масками й ті, де розкладка зсунула б шар більш ніж на 1 px. Шари, що перекриваються, а також повернуті всередині такого фрейма абсолютні.</div></li>
+    <li><span class="label">CSS</span><div class="text"><code>clip-path</code> і <code>skew</code> не переносяться. Складені маски переносяться частково, а SVG-маски за посиланням не переносяться, про що плагін попереджає.</div></li>
+    <li><span class="label">CORS</span><div class="text">Файли, на які збережений сайт посилається через <code>/шлях</code> або чужий сервер, завантажуються, лише якщо сервер це дозволяє. Інакше буде сіра заглушка.</div></li>
+    <li><span class="label">Шрифти</span><div class="text">Шрифт, якого немає у Figma, треба встановити на комп'ютер. Контури будуються, лише якщо файл шрифту є у HTML або zip. Перенесення рядків може трохи відрізнятися від браузера.</div></li>
+    <li><span class="label">Плитка</span><div class="text">Фон-плитка (<code>background-size</code>) і SVG, що повторюється у фоні, вставляються картинкою.</div></li>
+    <li><span class="label">Файли</span><div class="text">Не підтримуються zip64 та архіви з паролем. Лист <code>.msg</code>, де HTML є лише у стиснутому RTF, імпортується як простий текст.</div></li>
+    <li><span class="label">Зависання</span><div class="text">Сторінка з нескінченним циклом у скрипті може завісити вікно, тоді плагін треба запустити знову. Якщо Figma згорнута, імпорт може зупинитися через 60 секунд, і його треба повторити.</div></li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>Питання</h2>
+  <div class="faq">
+    <details><summary>Скільки це коштує?</summary><div>Layerdrop безкоштовний, платної версії немає.</div></details>
+    <details><summary>Чому не можна просто вставити посилання?</summary><div>Браузер не дозволяє плагіну читати чужі сайти напряму, тому для цього потрібен сервер-посередник. У Layerdrop сервера немає. Натомість збережіть сторінку через SingleFile і киньте файл: скрипти вже відпрацювали, а за логіном така сторінка теж зберігається.</div></details>
+    <details><summary>Куди потрапляють мої файли?</summary><div>Вони нікуди не надсилаються, бо сервера в плагіна немає. Запити робить лише сама сторінка і, для шрифту, що не завантажився, плагін до Google Fonts. Докладно описано в <a href="privacy/">політиці приватності</a>.</div></details>
+    <details><summary>Чи безпечно запускати скрипти чужої сторінки?</summary><div>Сторінка працює в ізольованому вікні й не має доступу до плагіна та файла Figma. Але скрипти можуть робити свої запити в інтернет, а нескінченний цикл може завісити вікно. Не імпортуйте сторінки, яким не довіряєте.</div></details>
+    <details><summary>Чому картинки стали сірими?</summary><div>Плагін не зміг отримати файл: поруч немає папки або сервер не дозволяє CORS. Киньте папку чи zip або збережіть сторінку через SingleFile, яке вшиває картинки у файл.</div></details>
+    <details><summary>Навіщо у шарах фрейми Row і Column?</summary><div>Вони утримують елементи на місці, коли сітку чи блоки з різними проміжками розбито на вкладені рядки й колонки. Якщо вони заважають, вимкніть auto layout у налаштуваннях шарів.</div></details>
+    <details><summary>Чи працює плагін у Figma в браузері?</summary><div>Поки ми запускали його лише в застосунку Figma для комп'ютера. Відповідь уточнимо після публікації.</div></details>
+    <details><summary>Якою мовою вікно плагіна?</summary><div>Українською й англійською, перемикач угорі вікна. Назви шарів і сповіщення на полотні завжди англійською, а текст зі сторінки не перекладається.</div></details>
+    <details><summary>Чи можна імпортувати чужий сайт?</summary><div>Технічно плагін імпортує те, що ви можете відкрити. Чи маєте ви на це право, залежить від сайту й мети. Поважайте авторські права й торгові марки.</div></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="./"><img src="assets/icon.svg" alt="" width="28" height="28">Layerdrop</a>
+  <nav aria-label="Розділи"><a href="#features">Функції</a><a href="#compare">Порівняння</a><a href="#install">Встановлення</a><a href="#limits">Обмеження</a><a href="#faq">Питання</a></nav>
+  <p>Сторінка описує версію 2.0. <a href="privacy/">Приватність</a></p>
+  <p>Незалежний плагін, не пов'язаний із Figma, Inc. Figma є торговою маркою Figma, Inc.</p>
+</footer>
+</body>
+</html>
