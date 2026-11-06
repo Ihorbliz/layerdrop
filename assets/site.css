@@ -46,7 +46,6 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 a:hover { color: var(--blue); }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-.band :focus-visible { outline-color: var(--paper); }
 code { font: 400 .92em var(--mono); white-space: nowrap; }
 p { margin: 0 0 1em; }
 p:last-child { margin-bottom: 0; }
@@ -194,8 +193,6 @@ figcaption { margin-top: 10px; font: 400 15px/1.45 var(--sans); }
 .compare .n { background: var(--pink); color: var(--ink); width: fit-content; padding: 0 6px; }
 .compare th.group { font: 500 13px/1.4 var(--mono); letter-spacing: .03em; text-transform: uppercase; padding-top: 28px; }
 .table-skip { display: none; margin-top: 20px; padding: 10px 0; font-weight: 600; }
-.sources { margin-top: 28px; font-size: 15px; max-width: 60em; }
-.sources ul { margin: 8px 0 0; padding-left: 1.1em; }
 
 /* Steps */
 .window-sheet { --fold: 32px; }
@@ -205,15 +202,6 @@ figcaption { margin-top: 10px; font: 400 15px/1.45 var(--sans); }
 .after { margin-top: 32px; max-width: 46em; }
 .gap-b { margin-bottom: 32px; }
 .pending-label { margin-bottom: 14px; }
-.privacy-link { margin-top: 28px; }
-
-/* Blue band */
-.band { margin-top: clamp(64px, 9vw, 136px); padding: clamp(56px, 7vw, 104px) var(--gutter); background: var(--blue); color: var(--paper); }
-.band h2 { color: var(--paper); }
-.band h2 .ink2 { text-shadow: max(.03em, 2.5px) max(.03em, 2.5px) 0 var(--pink); }
-.band a { color: var(--paper); }
-.band a:hover { color: var(--paper); text-decoration-thickness: 4px; }
-.band + section { padding-top: clamp(64px, 9vw, 136px); }
 
 /* FAQ */
 .faq { border-top: 3px solid var(--ink); max-width: 1000px; }
